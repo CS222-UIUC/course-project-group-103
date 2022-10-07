@@ -1,80 +1,44 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Dimensions, ImageBackground, TouchableHighlight, ScrollView, TextInput } from 'react-native';
-import Constants from 'expo-constants';
+import LoginPage from "./screens/LoginPage";
+import HomePage from "./screens/HomePage";
+import CalendarPage from "./screens/CalendarPage";
+import BuildingList from "./screens/BuildingList";
+import MapPage from "./screens/MapPage";
+import UserPage from "./screens/UserPage";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-let dh = Dimensions.get('window').height;
-let dw = Dimensions.get('window').width;
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.containerLogIn}>
-      <View style={styles.LogInSections}>
-        <Text style={styles.LogInTopText}>
-          Log In
-        </Text>
-      </View>
-      <View style={styles.LogInSections}>
-        <View style={styles.LogInInputAndInfo}>
-          
-        </View>
-        <View style={styles.LogInInputAndInfo}>
-          
-        </View>
-        <View style={styles.LogInInputAndInfo}>
-          
-        </View>
-      </View>
-      <View style={styles.LogInSections}>
-
-      </View>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name='Login'
+          component={LoginPage}
+        />
+        <Stack.Screen
+          name='Home'
+          component={HomePage}
+        />
+        <Stack.Screen
+          name='Calendar'
+          component={CalendarPage}
+        />
+        <Stack.Screen
+          name='Map'
+          component={MapPage}
+        />
+        <Stack.Screen
+          name='Buildings'
+          component={BuildingList}
+        />
+        <Stack.Screen
+          name='User'
+          component={UserPage}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  containerLogIn: {
-    height: dh,
-    width: dw,
-    alignItems: 'center',
-    justifyContent: 'center',
-    display: 'block',
-  },
-  LogInSections: {
-    height: dh/3,
-    width: dw,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  LogInTopText: {
-    textAlign: 'center',
-    font: 'Avenir',
-    fontSize: dh/15,
-    fontWeight: 'bold',
-    color: '#FDCA8C'
-  },
-  LogInInputAndInfo: {
-    height: dh/12,
-    width: dw,
-    paddingVertical: dh/72,
-    flexDirection: 'row',
-  },
-  LogInInfo: {
-    height: dh/12,
-    width: dw/3,
-    paddingVertical: dh/72,
-  },
-  LogInInputs: {
-    height: dh/12,
-    width: dw/6,
-    paddingVertical: dh/72,
-  },
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  header: {
-    backgroundColor: 'gray',
-  },
-});
