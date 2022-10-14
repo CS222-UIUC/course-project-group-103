@@ -13,8 +13,20 @@ export default function HomePage({ navigation }) {
   return (
     <View style={styles.container}>
         <View style={styles.containerPage}>
+            <Text style={styles.title}>
+            Hello! Navigate to each page using the buttons below
+            </Text>
             <Text style={styles.text}>
-                
+            Calendar Page: import your schedule here!
+            </Text>
+            <Text style={styles.text}>
+            Building List: see a list of common study spaces here!
+            </Text>
+            <Text style={styles.text}>
+            Map: see nearby study spaces here!
+            </Text>
+            <Text style={styles.text}>
+            UserPage: see the closest study space to you here!
             </Text>
         </View>
         <View style={styles.footer}>
@@ -50,6 +62,13 @@ export default function HomePage({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  title: {
+    fontSize: 20,
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
