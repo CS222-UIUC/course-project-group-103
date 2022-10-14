@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Dimensions, ImageBackground, TouchableHighlight, ScrollView, TextInput, Button } from 'react-native';
+import { StyleSheet, Text, Image, View, Dimensions, ImageBackground, TouchableHighlight, ScrollView, TextInput, Button } from 'react-native';
 import Constants from 'expo-constants';
 import { StackActions } from '@react-navigation/native';
 
@@ -10,6 +10,20 @@ export default function BuildingList({ navigation }) {
   return (
     <View style={styles.container}>
         <View style={styles.containerPage}>
+        
+        <Image 
+          style = {{width: 150, height: 150}}
+          source={{uri: 'https://www.library.illinois.edu/wp-content/uploads/2017/12/grainger23_small.jpg'}} 
+        />
+        <Image 
+          style = {{width: 150, height: 150}}
+          source={{uri: 'https://www.som.com/wp-content/uploads/2018/05/UIUC_SOM_DaveBurk_010_large-1647621340-scaled.jpg'}} 
+        />
+        <Image 
+          style = {{width: 150, height: 150}}
+          source={{uri: 'https://www.burasphotography.com/img/s/v-10/p1516178263-4.jpg'}}
+        />
+
 
         </View>
         <View style={styles.footer}>
