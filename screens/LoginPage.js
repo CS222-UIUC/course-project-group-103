@@ -1,11 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Dimensions, ImageBackground, TouchableHighlight, ScrollView, TextInput, Button } from 'react-native';
 import Constants from 'expo-constants';
+import { StackActions } from '@react-navigation/native';
+import { useState } from 'react';
 
 let dh = Dimensions.get('window').height;
 let dw = Dimensions.get('window').width;
 
 export default function LoginPage({ navigation }) {
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
     <View style={styles.containerLogIn}>
         <View style={styles.LogInSections}>
@@ -21,9 +28,11 @@ export default function LoginPage({ navigation }) {
                 Name:
             </Text>
             </View>
-            <View style={styles.LogInInputs}>
+            <TextInput style={styles.LogInInputs}
+              placeholder='e.g. John Doe'
+              onChangeText={(val) => setName(val)}
+            />
 
-            </View>
         </View>
 
         <View style={styles.LogInInputAndInfo}>
@@ -32,9 +41,10 @@ export default function LoginPage({ navigation }) {
                 Email:
             </Text>
             </View>
-            <View style={styles.LogInInputs}>
-
-            </View>
+            <TextInput style={styles.LogInInputs}
+              placeholder='e.g. JohnDoe@email.com'
+              onChangeText={(val) => setEmail(val)}
+            />
         </View>
 
         <View style={styles.LogInInputAndInfo}>
@@ -43,16 +53,17 @@ export default function LoginPage({ navigation }) {
                 Password:
             </Text>
             </View>
-            <View style={styles.LogInInputs}>
-
-            </View>
+            <TextInput style={styles.LogInInputs}
+              placeholder='Password'
+              onChangeText={(val) => setPassword(val)}
+            />
         </View>
         </View>
 
         <View style={styles.LogInSections}>
             <View style={styles.button}>
                <Button title="Log In"
-                    onPress={() => navigation.navigate("Home")}
+                    onPress={() => navigation.navigate("Home", name)}
                />
             </View>
         </View>
@@ -99,7 +110,7 @@ const styles = StyleSheet.create({
   LogInInputs: {
     height: dh/18,
     width: dw/2,
-    paddingVertical: dh/72,
+    padding: dh/72,
     backgroundColor: 'gray',
     borderColor: 'black',
     borderWidth: 1,

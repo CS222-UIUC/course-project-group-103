@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Dimensions, ImageBackground, TouchableHighlight, ScrollView, TextInput, Button } from 'react-native';
 import Constants from 'expo-constants';
+import { StackActions } from '@react-navigation/native';
 
 let dh = Dimensions.get('window').height;
 let dw = Dimensions.get('window').width;
@@ -14,27 +15,27 @@ export default function CalendarPage({ navigation }) {
         <View style={styles.footer}>
             <View style={styles.footerButtonSelect}>
                 <Button title="Calendar"
-                    onPress={() => navigation.navigate("Calendar")}
+                    onPress={() => navigation.dispatch(StackActions.replace("Calendar"))}
                 />
             </View>
             <View style={styles.footerButtons}>
                 <Button title="Building List"
-                    onPress={() => navigation.navigate("Buildings")}
+                    onPress={() => navigation.dispatch(StackActions.replace("Buildings"))}
                 />
             </View>
             <View style={styles.footerButtons}>
                 <Button title="Home"
-                    onPress={() => navigation.navigate("Home")}
+                    onPress={() => navigation.dispatch(StackActions.replace("Home"))}
                 />
             </View>
             <View style={styles.footerButtons}>
                 <Button title="Map"
-                    onPress={() => navigation.navigate("Map")}
+                    onPress={() => navigation.dispatch(StackActions.replace("Map"))}
                 />
             </View>
             <View style={styles.footerButtons}>
                 <Button title="User Page"
-                    onPress={() => navigation.navigate("User")}
+                    onPress={() => navigation.dispatch(StackActions.replace("User"))}
                 />
             </View>
         </View>
