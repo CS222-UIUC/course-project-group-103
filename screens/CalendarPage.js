@@ -9,9 +9,56 @@ let dw = Dimensions.get('window').width;
 export default function CalendarPage({ navigation }) {
   return (
     <View style={styles.container}>
+      <ScrollView
+          decelerationRate={0}
+          snapToAlignment={'center'}
+          >
         <View style={styles.containerPage}>
+          
+          <View style={styles.calendarBox}>
+            <Text style={styles.text}>
+              Sunday:),
+            </Text>
+          </View>
+
+          <View style={styles.calendarBox}>
+          <Text style={styles.text}>
+              Monday:),
+            </Text>
+          </View>
+
+          <View style={styles.calendarBox}>
+          <Text style={styles.text}>
+              Tuesday:),
+            </Text>
+          </View>
+
+          <View style={styles.calendarBox}>
+          <Text style={styles.text}>
+              Wednesday:),
+            </Text>
+          </View>
+
+          <View style={styles.calendarBox}>
+          <Text style={styles.text}>
+              Thursday:),
+            </Text>
+          </View>
+
+          <View style={styles.calendarBox}>
+          <Text style={styles.text}>
+              Friday:),
+            </Text>
+          </View>
+
+          <View style={styles.calendarBox}>
+          <Text style={styles.text}>
+              Saturday:),
+            </Text>
+          </View>
 
         </View>
+        </ScrollView>
         <View style={styles.footer}>
             <View style={styles.footerButtonSelect}>
                 <Button title="Calendar"
@@ -52,10 +99,20 @@ const styles = StyleSheet.create({
   },
   containerPage: {
     height: 4*dh/5,
-    width: dw,
+    //width: dw,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    flexDirection: 'column',
+  },
+  calendarBox: {
+    height: 4*dh/5,
+    width: 3*dw/5,
+    backgroundColor: '#fff',
+    borderWidth: 1,
+    borderColor: 'black',
+    justifyContent: 'center',
+
   },
   footer: {
     height: dh/10,
