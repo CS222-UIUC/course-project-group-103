@@ -61,11 +61,14 @@ export default function LoginPage({ navigation }) {
         </View>
 
         <View style={styles.LogInSections}>
-            <View style={styles.button}>
-               <Button title="Log In"
-                    onPress={() => navigation.navigate("Home", name)}
-               />
-            </View>
+            {name != "" && email != "" && password != "" ?
+              <View style={styles.button}>
+                  <Button title="Log In"
+                        onPress={() => navigation.navigate("Home", name)}
+                  />
+              </View> :
+              null
+            }
         </View>
     </View>
   );
