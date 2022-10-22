@@ -10,6 +10,7 @@ export default function CalendarPage({ navigation }) {
   return (
     <View style={styles.container}>
       <ScrollView
+          horizontal={true}
           decelerationRate={0}
           snapToAlignment={'center'}
           >
@@ -58,7 +59,7 @@ export default function CalendarPage({ navigation }) {
           </View>
 
         </View>
-        </ScrollView>
+      </ScrollView>
         <View style={styles.footer}>
             <View style={styles.footerButtonSelect}>
                 <Button title="Calendar"
@@ -99,11 +100,11 @@ const styles = StyleSheet.create({
   },
   containerPage: {
     height: 4*dh/5,
-    //width: dw,
+    //width: 7 * dw,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    flexDirection: 'column',
+    flexDirection: 'row',
   },
   calendarBox: {
     height: 4*dh/5,
