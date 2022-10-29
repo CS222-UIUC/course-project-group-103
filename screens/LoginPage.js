@@ -41,22 +41,29 @@ export default function LoginPage({ navigation }) {
                 Email:
             </Text>
             </View>
-            <TextInput style={styles.LogInInputs}
-              placeholder='e.g. JohnDoe@email.com'
-              onChangeText={(val) => setEmail(val)}
-            />
+            { name != "" ?
+              <TextInput style={styles.LogInInputs}
+                placeholder='e.g. JohnDoe@email.com'
+                onChangeText={(val) => setEmail(val)}
+              /> :
+              null
+            }
+            
         </View>
 
         <View style={styles.LogInInputAndInfo}>
             <View style={styles.LogInInfo}>
-            <Text style={styles.LogInInputText}>
-                Password:
-            </Text>
+                <Text style={styles.LogInInputText}>
+                    Password:
+                </Text>
             </View>
+            { email != "" ?
             <TextInput style={styles.LogInInputs}
               placeholder='Password'
               onChangeText={(val) => setPassword(val)}
-            />
+            /> :
+            null
+            }
         </View>
         </View>
 
