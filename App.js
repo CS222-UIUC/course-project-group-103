@@ -1,4 +1,5 @@
 import LoginPage from "./screens/LoginPage";
+import SignInPage from "./screens/SignInPage";
 import HomePage from "./screens/HomePage";
 import CalendarPage from "./screens/CalendarPage";
 import BuildingList from "./screens/BuildingList";
@@ -16,6 +17,10 @@ export default function App() {
         <Stack.Screen
           name='Login'
           component={LoginPage}
+        />
+        <Stack.Screen
+          name='Sign In'
+          component={SignInPage}
         />
         <Stack.Screen
           name='Home'

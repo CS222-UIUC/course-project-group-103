@@ -7,9 +7,8 @@ import { useState } from 'react';
 let dh = Dimensions.get('window').height;
 let dw = Dimensions.get('window').width;
 
-export default function LoginPage({ navigation }) {
+export default function SignInPage({ navigation }) {
 
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -17,23 +16,12 @@ export default function LoginPage({ navigation }) {
     <View style={styles.containerLogIn}>
         <View style={styles.LogInSectionsTwo}>
         <Text style={styles.LogInTopText}>
-            Log In
+            Sign In
         </Text>
         </View>
 
         <View style={styles.LogInSections}>
-        <View style={styles.LogInInputAndInfo}>
-            <View style={styles.LogInInfo}>
-            <Text style={styles.LogInInputText}>
-                Name:
-            </Text>
-            </View>
-            <TextInput style={styles.LogInInputs}
-              placeholder='e.g. John Doe'
-              onChangeText={(val) => setName(val)}
-            />
-
-        </View>
+        
 
         <View style={styles.LogInInputAndInfo}>
             <View style={styles.LogInInfo}>
@@ -41,13 +29,11 @@ export default function LoginPage({ navigation }) {
                 Email:
             </Text>
             </View>
-            { name != "" ?
+            
               <TextInput style={styles.LogInInputs}
                 placeholder='e.g. JohnDoe@email.com'
                 onChangeText={(val) => setEmail(val)}
-              /> :
-              null
-            }
+              />
             
         </View>
 
@@ -68,9 +54,9 @@ export default function LoginPage({ navigation }) {
         </View>
 
         <View style={styles.LogInSectionsTwo}>
-            {name != "" && email != "" && password != "" ?
+            {email != "" && password != "" ?
               <View style={styles.button}>
-                  <Button title="Log In"
+                  <Button title="Sign In"
                         onPress={() => navigation.navigate("Home")}
                   />
               </View> :
@@ -79,8 +65,8 @@ export default function LoginPage({ navigation }) {
         </View>
         <View style={styles.LogInSectionsTwo}>
         <View style={styles.buttonTwo}>
-                  <Button title="Go to Sign In"
-                        onPress={() => navigation.dispatch(StackActions.replace("Sign In"))}
+                  <Button title="Go to Log In"
+                        onPress={() => navigation.dispatch(StackActions.replace("Login"))}
                   />
               </View>
         </View>
