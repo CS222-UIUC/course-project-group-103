@@ -20,6 +20,7 @@ export default function LoginPage({ navigation }) {
             Log In
         </Text>
         </View>
+        
 
         <View style={styles.LogInSections}>
         <View style={styles.LogInInputAndInfo}>
@@ -63,7 +64,7 @@ export default function LoginPage({ navigation }) {
         <View style={styles.LogInSections}>
             <View style={styles.button}>
                <Button title="Log In"
-                    onPress={() => navigation.navigate("Home", name)}
+                    onPress={() => navigation.navigate("Home")}
                />
             </View>
         </View>
