@@ -13,8 +13,12 @@ export default function HomePage({ navigation }) {
   return (
     <View style={styles.container}>
         <View style={styles.containerPage}>
+            <Image // uiuc
+              style = {{width: 150, height: 150}}
+              source={{uri: 'https://chemistry.illinois.edu/sites/default/files/inline-images/uiuc%20campus_0.png'}} 
+            />
             <Text style={styles.title}>
-            Hello! Navigate to each page using the buttons below
+            Hello and welcome to the Home Page! Use the buttons to navigate to your desired location
             </Text>
             <Text style={styles.text}>
             Calendar Page: import your schedule here!
