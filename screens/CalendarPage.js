@@ -1,8 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Dimensions, ImageBackground, TouchableHighlight, ScrollView, TextInput, Button } from 'react-native';
+import { StyleSheet, Text, View, Dimensions, ImageBackground, TouchableHighlight, ScrollView, TextInput, Button, TouchableOpacity } from 'react-native';
 import Constants from 'expo-constants';
 import { StackActions } from '@react-navigation/native';
 import { render } from 'react-native/Libraries/Renderer/implementations/ReactNativeRenderer-prod';
+import React from 'react';
+//import { StyleSheet, Text, View, TouchableOpacity, StatusBar } from 'react-native';
+import { Agenda } from 'react-native-calendars';
+import { Card } from 'react-native-paper';
 //import App from '../App';
 
 
@@ -121,10 +125,10 @@ class MyCalendar extends React.Component {
 // // }
 // //export default App;
 
-import React from 'react';
-//import { StyleSheet, Text, View, TouchableOpacity, StatusBar } from 'react-native';
-import { Agenda } from 'react-native-calendars';
-import { Card } from 'react-native-paper';
+// import React from 'react';
+// //import { StyleSheet, Text, View, TouchableOpacity, StatusBar } from 'react-native';
+// import { Agenda } from 'react-native-calendars';
+// import { Card } from 'react-native-paper';
 
 const timeToString = (time) => {
     const date = new Date(time);
