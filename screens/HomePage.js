@@ -3,6 +3,9 @@ import { StyleSheet, Text, View, Dimensions, ImageBackground, TouchableHighlight
 import Constants from 'expo-constants';
 import { StackActions } from '@react-navigation/native';
 import {useState} from 'react';
+import CreateCard from '../components/Card'
+import CreateFooter from '../components/Footer'
+
 
 let dh = Dimensions.get('window').height;
 let dw = Dimensions.get('window').width;
@@ -12,26 +15,9 @@ export default function HomePage({ navigation }) {
 
   return (
     <View style={styles.container}>
-        <View style={styles.containerPage}>
-            <Image // uiuc
-              style = {{width: 150, height: 150}}
-              source={{uri: 'https://chemistry.illinois.edu/sites/default/files/inline-images/uiuc%20campus_0.png'}} 
-            />
-            <Text style={styles.title}>
-            Hello and welcome to the Home Page! Use the buttons to navigate to your desired location
-            </Text>
-            <Text style={styles.text}>
-            Calendar Page: import your schedule here!
-            </Text>
-            <Text style={styles.text}>
-            Building List: see a list of common study spaces here!
-            </Text>
-            <Text style={styles.text}>
-            Map: see nearby study spaces here!
-            </Text>
-            <Text style={styles.text}>
-            UserPage: see the closest study space to you here!
-            </Text>
+    
+        <View style={styles.card}>
+            <CreateCard />
         </View>
         <View style={styles.footer}>
             <View style={styles.footerButtons}>
@@ -74,6 +60,13 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  card: {
+    height: 4*dh/5,
+    width: dw,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
