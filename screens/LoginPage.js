@@ -21,7 +21,6 @@ export default function LoginPage({ navigation }) {
         </Text>
         </View>
         
-
         <View style={styles.LogInSections}>
         <View style={styles.LogInInputAndInfo}>
             <View style={styles.LogInInfo}>

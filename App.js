@@ -6,9 +6,6 @@ import MapPage from "./screens/MapPage";
 import UserPage from "./screens/UserPage";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { render } from "react-native/Libraries/Renderer/implementations/ReactNativeRenderer-prod";
-
-
 
 const Stack = createNativeStackNavigator();
 

@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Dimensions, ImageBackground, TouchableHighlight, ScrollView, TextInput, Button } from 'react-native';
 import Constants from 'expo-constants';
 import { StackActions } from '@react-navigation/native';
+import { Wrapper, Status } from "@googlemaps/react-wrapper";
 
 let dh = Dimensions.get('window').height;
 let dw = Dimensions.get('window').width;
