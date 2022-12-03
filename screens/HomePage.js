@@ -3,6 +3,9 @@ import { StyleSheet, Text, View, Dimensions, ImageBackground, TouchableHighlight
 import Constants from 'expo-constants';
 import { StackActions } from '@react-navigation/native';
 import {useState} from 'react';
+import CreateCard from '../components/Card'
+import CreateFooter from '../components/Footer'
+
 
 let dh = Dimensions.get('window').height;
 let dw = Dimensions.get('window').width;
@@ -12,10 +15,9 @@ export default function HomePage({ navigation }) {
 
   return (
     <View style={styles.container}>
-        <View style={styles.containerPage}>
-            <Text style={styles.text}>
-                
-            </Text>
+    
+        <View style={styles.card}>
+            <CreateCard />
         </View>
         <View style={styles.footer}>
             <View style={styles.footerButtons}>
@@ -51,6 +53,20 @@ export default function HomePage({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  title: {
+    fontSize: 20,
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  card: {
+    height: 4*dh/5,
+    width: dw,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
