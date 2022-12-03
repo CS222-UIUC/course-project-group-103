@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Dimensions, ImageBackground, TouchableHighlight, ScrollView, TextInput, Button } from 'react-native';
+import { StyleSheet, Text, Image, View, Dimensions, ImageBackground, TouchableHighlight, ScrollView, TextInput, Button } from 'react-native';
 import Constants from 'expo-constants';
 import { StackActions } from '@react-navigation/native';
 
@@ -10,6 +10,23 @@ export default function BuildingList({ navigation }) {
   return (
     <View style={styles.container}>
         <View style={styles.containerPage}>
+        
+        <Image // grainger
+          style = {{width: 150, height: 150}}
+          source={{uri: 'https://www.library.illinois.edu/wp-content/uploads/2017/12/grainger23_small.jpg'}} 
+        />
+        <Image //cif
+          style = {{width: 150, height: 150}}
+          source={{uri: 'https://www.som.com/wp-content/uploads/2018/05/UIUC_SOM_DaveBurk_010_large-1647621340-scaled.jpg'}} 
+        />
+        <Image //aces
+          style = {{width: 150, height: 150}}
+          source={{uri: 'https://www.burasphotography.com/img/s/v-10/p1516178263-4.jpg'}}
+        />
+        <Image //main library
+          style = {{width: 150, height: 150}}
+          source={{uri: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3AMain_Library-University_of_Illinois_at_Urbana-Champaign_11.jpg&psig=AOvVaw3zam2id63XEVbKZ9Gk5NG5&ust=1667707641948000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCJDb_qCVlvsCFQAAAAAdAAAAABAD'}}
+        />
 
         </View>
         <View style={styles.footer}>
