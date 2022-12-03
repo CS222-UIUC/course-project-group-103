@@ -3,15 +3,40 @@ import { StyleSheet, Text, View, Dimensions, ImageBackground, TouchableHighlight
 import Constants from 'expo-constants';
 import { StackActions } from '@react-navigation/native';
 import { useState } from 'react';
+import { auth } from "../firebase";
 
 let dh = Dimensions.get('window').height;
 let dw = Dimensions.get('window').width;
 
 export default function LoginPage({ navigation }) {
 
-  const [name, setName] = useState("");
+  // const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const handleSignUp = () => {
+    // console.log("hi")
+    auth
+    .createUserWithEmailAndPassword(email, password)
+    .then(userCredentials => {
+      const user = userCredentials.user;
+      console.log(user.email);
+      navigation.navigate("Home")
+    })
+    .catch(error => alert(error.message))
+  }
+
+  const handleSignIn = () => {
+    auth
+    .signInWithEmailAndPassword(email, password)
+    .then(userCredentials => {
+      const user = userCredentials.user;
+      console.log("logged in with ", user.email);
+      navigation.navigate("Home")
+    })
+    .catch(error => alert(error.message))
+    
+  }
 
   return (
     <View style={styles.containerLogIn}>
@@ -22,7 +47,7 @@ export default function LoginPage({ navigation }) {
         </View>
 
         <View style={styles.LogInSections}>
-        <View style={styles.LogInInputAndInfo}>
+        {/* <View style={styles.LogInInputAndInfo}>
             <View style={styles.LogInInfo}>
             <Text style={styles.LogInInputText}>
                 Name:
@@ -33,7 +58,7 @@ export default function LoginPage({ navigation }) {
               onChangeText={(val) => setName(val)}
             />
 
-        </View>
+        </View> */}
 
         <View style={styles.LogInInputAndInfo}>
             <View style={styles.LogInInfo}>
@@ -41,13 +66,11 @@ export default function LoginPage({ navigation }) {
                 Email:
             </Text>
             </View>
-            { name != "" ?
+           
               <TextInput style={styles.LogInInputs}
-                placeholder='e.g. JohnDoe@email.com'
+                placeholder='e.g. JohnDoe@gmail.com'
                 onChangeText={(val) => setEmail(val)}
-              /> :
-              null
-            }
+              />
             
         </View>
 
@@ -68,19 +91,19 @@ export default function LoginPage({ navigation }) {
         </View>
 
         <View style={styles.LogInSectionsTwo}>
-            {name != "" && email != "" && password != "" ?
+            {email != "" && password != "" ?
               <View style={styles.button}>
-                  <Button title="Log In"
-                        onPress={() => navigation.navigate("Home")}
+                  <Button title="Register"
+                        onPress={handleSignUp}
                   />
               </View> :
               null
             }
         </View>
         <View style={styles.LogInSectionsTwo}>
-        <View style={styles.buttonTwo}>
-                  <Button title="Go to Sign In"
-                        onPress={() => navigation.dispatch(StackActions.replace("Sign In"))}
+        <View style={styles.button}>
+                  <Button title="Sign In"
+                        onPress={handleSignIn}
                   />
               </View>
         </View>
@@ -103,7 +126,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   LogInSectionsTwo: {
-    height: 2*dh/10,
+    height: 3*dh/20,
     width: dw,
     alignItems: 'center',
     justifyContent: 'center',

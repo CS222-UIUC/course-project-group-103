@@ -1,5 +1,4 @@
 import LoginPage from "./screens/LoginPage";
-import SignInPage from "./screens/SignInPage";
 import HomePage from "./screens/HomePage";
 import CalendarPage from "./screens/CalendarPage";
 import BuildingList from "./screens/BuildingList";
@@ -15,12 +14,8 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name='Login'
+          name='Sign up'
           component={LoginPage}
-        />
-        <Stack.Screen
-          name='Sign In'
-          component={SignInPage}
         />
         <Stack.Screen
           name='Home'
