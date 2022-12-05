@@ -1,5 +1,3 @@
-// import { initializeApp, getApps, getApp } from "firebase/app";
-// import "firebase/auth";
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
@@ -19,8 +17,9 @@ let app;
 if (firebase.apps.length === 0) {
   app = firebase.initializeApp(firebaseConfig);
 } else {
-  app = firebase.app
+  app = firebase.app();
 }
+// getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
 
 const auth = firebase.auth()
 
