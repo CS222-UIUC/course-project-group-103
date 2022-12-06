@@ -4,7 +4,6 @@ import Constants from 'expo-constants';
 import { StackActions } from '@react-navigation/native';
 import {useState} from 'react';
 import CreateCard from '../components/Card'
-import CreateFooter from '../components/Footer'
 
 
 let dh = Dimensions.get('window').height;
