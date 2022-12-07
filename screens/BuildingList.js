@@ -25,7 +25,7 @@ export default function BuildingList({ navigation }) {
         />
         <Image //main library
           style = {{width: 150, height: 150}}
-          source={{uri: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3AMain_Library-University_of_Illinois_at_Urbana-Champaign_11.jpg&psig=AOvVaw3zam2id63XEVbKZ9Gk5NG5&ust=1667707641948000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCJDb_qCVlvsCFQAAAAAdAAAAABAD'}}
+          source={{uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Main_Library-University_of_Illinois_at_Urbana-Champaign_11.jpg/1200px-Main_Library-University_of_Illinois_at_Urbana-Champaign_11.jpg?20161001062035'}}
         />
 
         </View>
@@ -48,11 +48,6 @@ export default function BuildingList({ navigation }) {
             <View style={styles.footerButtons}>
                 <Button title="Map"
                     onPress={() => navigation.dispatch(StackActions.replace("Map"))}
-                />
-            </View>
-            <View style={styles.footerButtons}>
-                <Button title="User Page"
-                    onPress={() => navigation.dispatch(StackActions.replace("User"))}
                 />
             </View>
         </View>
@@ -83,7 +78,7 @@ const styles = StyleSheet.create({
   },
   footerButtons: {
     height: dh/10,
-    width: dw/5,
+    width: dw/4,
     borderColor: 'black',
     borderWidth: 1,
     alignItems: 'center',
@@ -92,7 +87,7 @@ const styles = StyleSheet.create({
   },
   footerButtonSelect: {
     height: dh/10,
-    width: dw/5,
+    width: dw/4,
     borderColor: 'black',
     borderWidth: 1,
     alignItems: 'center',

@@ -3,7 +3,6 @@ import HomePage from "./screens/HomePage";
 import CalendarPage from "./screens/CalendarPage";
 import BuildingList from "./screens/BuildingList";
 import MapPage from "./screens/MapPage";
-import UserPage from "./screens/UserPage";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
@@ -38,10 +37,6 @@ export default function App() {
         <Stack.Screen
           name='Buildings'
           component={BuildingList}
-        />
-        <Stack.Screen
-          name='User'
-          component={UserPage}
         />
       </Stack.Navigator>
     </NavigationContainer>

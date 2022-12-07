@@ -98,11 +98,6 @@ export default function CalendarPage({ navigation }) {
                     onPress={() => navigation.dispatch(StackActions.replace("Map"))}
                 />
             </View>
-            <View style={styles.footerButtons}>
-                <Button title="User Page"
-                    onPress={() => navigation.dispatch(StackActions.replace("User"))}
-                />
-            </View>
         </View>
       </View>
     
@@ -139,7 +134,7 @@ const styles = StyleSheet.create({
   },
   footerButtons: {
     height: dh/10,
-    width: dw/5,
+    width: dw/4,
     borderColor: 'black',
     borderWidth: 1,
     alignItems: 'center',
@@ -148,7 +143,7 @@ const styles = StyleSheet.create({
   },
   footerButtonSelect: {
     height: dh/10,
-    width: dw/5,
+    width: dw/4,
     borderColor: 'black',
     borderWidth: 1,
     alignItems: 'center',
