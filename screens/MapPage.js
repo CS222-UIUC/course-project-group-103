@@ -1,7 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Dimensions, ImageBackground, TouchableHighlight, ScrollView, TextInput, Button } from 'react-native';
+import { StyleSheet, Text, Image, View, Dimensions, ImageBackground, TouchableHighlight, ScrollView, TextInput, Button } from 'react-native';
 import Constants from 'expo-constants';
 import { StackActions } from '@react-navigation/native';
+import map from '../library_map.png'
+
 
 let dh = Dimensions.get('window').height;
 let dw = Dimensions.get('window').width;
@@ -9,8 +11,12 @@ let dw = Dimensions.get('window').width;
 export default function MapPage({ navigation }) {
   return (
     <View style={styles.container}>
-        <View style={styles.containerPage}>
-
+    <View style={styles.containerPage}>
+        
+        <Image // libraries map
+          style = {{width: 9*dw/10, height: 7*dh/10, alignContent: 'center'}}
+          source={map} 
+        />
         </View>
         <View style={styles.footer}>
             <View style={styles.footerButtons}>
